@@ -17,11 +17,16 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 async function initAurora() {
   if (!canvas || reduceMotion) return;
 
-  // Bail early if WebGL isn't available — CSS fallback stays visible.
+  // Acquire the GL context ourselves and hand it to Three (via the `context`
+  // option) so Three never tries to create a second, possibly-conflicting one.
+  // If no context is available, the CSS lavender fallback simply stays.
+  let gl;
   try {
-    const test = document.createElement('canvas');
-    if (!(test.getContext('webgl') || test.getContext('experimental-webgl'))) return;
-  } catch (e) { return; }
+    const opts = { alpha: true, antialias: true, powerPreference: 'low-power' };
+    gl = canvas.getContext('webgl2', opts) || canvas.getContext('webgl', opts) ||
+         canvas.getContext('experimental-webgl', opts);
+  } catch (e) { /* ignore */ }
+  if (!gl) return;
 
   let THREE;
   try {
@@ -30,7 +35,12 @@ async function initAurora() {
     return; // CDN unreachable -> keep CSS fallback
   }
 
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  // Everything below can throw if a GL context can't be created
+  // (lost context, sandboxed canvas, etc.). On any failure we simply keep
+  // the CSS lavender gradient that's already painted behind the hero.
+  try {
+
+  const renderer = new THREE.WebGLRenderer({ canvas, context: gl, antialias: true, alpha: true });
   renderer.setClearColor(0x000000, 0);
   const DPR = Math.min(window.devicePixelRatio || 1, 1.75); // cap DPR for perf
   renderer.setPixelRatio(DPR);
@@ -150,6 +160,11 @@ async function initAurora() {
     raf = requestAnimationFrame(loop);
   }
   loop();
+
+  } catch (e) {
+    if (canvas) canvas.style.display = 'none'; // ensure CSS fallback shows
+    return;
+  }
 }
 
 initAurora();

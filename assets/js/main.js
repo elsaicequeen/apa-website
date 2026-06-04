@@ -27,16 +27,35 @@
   }
 
   /* ---- Reveal on scroll ----------------------------------------------- */
-  const reveals = document.querySelectorAll('.reveal');
-  if (reveals.length && !reduceMotion && 'IntersectionObserver' in window) {
-    const ro = new IntersectionObserver((entries, obs) => {
-      entries.forEach((en) => {
-        if (en.isIntersecting) { en.target.classList.add('in'); obs.unobserve(en.target); }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-    reveals.forEach((el) => ro.observe(el));
-  } else {
+  const reveals = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  if (!reveals.length || reduceMotion) {
     reveals.forEach((el) => el.classList.add('in'));
+  } else {
+    const show = (el) => el.classList.add('in');
+    // Primary: IntersectionObserver (cheap, fires as elements enter view).
+    if ('IntersectionObserver' in window) {
+      const ro = new IntersectionObserver((entries, obs) => {
+        entries.forEach((en) => { if (en.isIntersecting) { show(en.target); obs.unobserve(en.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      reveals.forEach((el) => ro.observe(el));
+    }
+    // Backstop: a throttled scroll/resize check that reveals anything within
+    // view. Guarantees the effect works even if IO is unavailable or quirky,
+    // and content can never end up permanently hidden.
+    let ticking = false;
+    const check = () => {
+      ticking = false;
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      for (let i = reveals.length - 1; i >= 0; i--) {
+        const el = reveals[i];
+        if (el.classList.contains('in')) { reveals.splice(i, 1); continue; }
+        if (el.getBoundingClientRect().top < vh * 0.92) show(el);
+      }
+    };
+    const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(check); } };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    check(); // reveal whatever is already in view on load
   }
 
   /* ---- Sticky mobile CTA (injected once, lives in one place) ----------- */
