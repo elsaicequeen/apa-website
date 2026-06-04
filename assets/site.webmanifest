@@ -1,0 +1,12 @@
+{
+  "name": "Apabrita Das Adhikari — Counselling Psychologist",
+  "short_name": "Apabrita Therapy",
+  "description": "Trauma-informed online therapy for individuals and groups.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f5fc",
+  "theme_color": "#f7f5fc",
+  "icons": [
+    { "src": "img/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
