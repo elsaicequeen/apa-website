@@ -1,7 +1,7 @@
-# Apabrita Das Adhikari — Therapy Practice Website
+# Apabrita — Therapy Practice Website
 
-A fast, calming, high-conversion website for **Apabrita Das Adhikari**, counselling &
-forensic psychologist offering trauma-informed **online therapy** (individual & group)
+A fast, calming, high-conversion website for **Apabrita**, a Narrative Humanistic
+Psychologist offering trauma-informed **online therapy** (individual & group)
 in India. Built to turn anxious visitors into booked free intake calls.
 
 - **Look & feel:** light, minimalist **lilac / lavender / white** with a restrained
@@ -36,7 +36,7 @@ Everything below is clearly marked with `TODO` in the code.
 | 2 | **Email address** | `data-email="hello@example.com"` on `<body>`; the email text in `contact.html` | Use the real address. |
 | 3 | **Contact form** | `contact.html` → `<form action="https://formspree.io/f/YOUR-FORM-ID">` | Create a free form at [formspree.io](https://formspree.io), paste your endpoint. Until then the form falls back to opening the visitor's email app. |
 | 4 | **Calendly booking** | `contact.html` → `data-calendly="https://calendly.com/YOUR-CALENDLY/intake-15min"` | Paste your real Calendly (or similar) link; the live calendar then loads automatically. Until then, WhatsApp/email/form still work. |
-| 5 | **Photo** | `assets/img/` + the `portrait-ph` blocks in `index.html` and `about.html` | Add a warm headshot (e.g. `apabrita.jpg`) and swap the placeholder `<div class="portrait-ph">…</div>` for `<img src="assets/img/apabrita.jpg" alt="Apabrita Das Adhikari" />`. |
+| 5 | **Photo** | `assets/img/` + the `portrait-ph` blocks in `index.html` and `about.html` | Add a warm headshot (e.g. `apabrita.jpg`) and swap the placeholder `<div class="portrait-ph">…</div>` for `<img src="assets/img/apabrita.jpg" alt="Apabrita" />`. |
 | 6 | **Testimonials** | not yet added — search the code for `testimonial` | Add 2–3 short, **anonymised** client quotes for social proof once you have consent. |
 | 7 | **Domain** | `CNAME`, and the `https://example.com` URLs in `index.html` (canonical/OG/JSON-LD), `sitemap.xml`, `robots.txt` | Replace `example.com` with your real domain. |
 
