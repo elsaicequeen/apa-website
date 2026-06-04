@@ -34,9 +34,9 @@
   --shadow-lift: 0 18px 50px -18px rgba(83, 58, 176, 0.35);
   --ring: 0 0 0 4px rgba(109, 74, 216, 0.28);
 
-  /* Type */
-  --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  --sans:  "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* Type — Glacial Indifference (geometric sans) for everything */
+  --serif: "Glacial Indifference", "Century Gothic", "Futura", system-ui, sans-serif; /* display */
+  --sans:  "Glacial Indifference", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
   /* Layout */
   --maxw: 1140px;
@@ -73,9 +73,9 @@ a:hover { color: var(--violet-deep); }
 h1, h2, h3, h4 {
   font-family: var(--serif);
   color: var(--plum);
-  line-height: 1.12;
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  line-height: 1.14;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 h1 { font-size: clamp(2.3rem, 1.5rem + 3.5vw, 4rem); }
@@ -395,6 +395,49 @@ p { color: var(--ink); }
 .crisis { margin-top: 1.4rem; padding: 1rem 1.2rem; border-radius: 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); font-size: 0.88rem; color: #c9c0e6; }
 .crisis b { color: #fff; }
 .footer-bottom { margin-top: 2.5rem; padding-top: 1.4rem; border-top: 1px solid rgba(255,255,255,0.12); font-size: 0.85rem; color: #9b91be; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between; }
+
+/* ----- Decorative shapes & illustrations -------------------------------- */
+/* Keep section content above any decorative blobs. */
+.section > .container { position: relative; z-index: 1; }
+
+.blob {
+  position: absolute; z-index: 0; pointer-events: none; border-radius: 50%;
+  filter: blur(46px); opacity: 0.5;
+}
+.blob--a { background: radial-gradient(circle at 30% 30%, #efe7ff, #cbb8f7); }
+.blob--b { background: radial-gradient(circle at 30% 30%, #e2d4ff, #b59ff0); }
+.blob--c { background: radial-gradient(circle at 30% 30%, #f3ecff, #d9c8fb); }
+
+/* Floating sparkles in the hero (behind the glass panels). */
+.hero .spark {
+  position: absolute; z-index: -1; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff, var(--lilac));
+  box-shadow: 0 8px 24px -8px rgba(109, 74, 216, 0.5);
+  animation: floaty 11s ease-in-out infinite;
+}
+@keyframes floaty { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-18px) } }
+
+/* Small flourish dots under a section eyebrow */
+.flourish { display: inline-flex; gap: 6px; margin-bottom: 1rem; }
+.flourish i { width: 8px; height: 8px; border-radius: 50%; background: var(--lilac); display: block; }
+.flourish i:nth-child(2) { background: var(--violet); transform: scale(1.15); }
+.flourish i:nth-child(3) { background: var(--lilac-soft); }
+
+/* Puzzle illustration */
+.puzzle-illus { width: 100%; max-width: 340px; height: auto; display: block; margin: 0 auto; }
+.puzzle-card { display: grid; gap: 1.2rem; place-items: center; text-align: center; padding: clamp(1.6rem, 4vw, 2.4rem); }
+.puzzle-card p { color: var(--muted); font-size: 0.98rem; max-width: 34ch; }
+
+/* Dotted connector behind the "how it works" steps (desktop) */
+.steps { position: relative; }
+@media (min-width: 781px) {
+  .steps::before {
+    content: ""; position: absolute; top: 23px; left: 12%; right: 12%; height: 2px; z-index: 0;
+    background-image: linear-gradient(90deg, var(--lilac) 0 60%, transparent 0);
+    background-size: 16px 2px; opacity: 0.6;
+  }
+  .steps .step { position: relative; z-index: 1; }
+}
 
 /* ----- Reveal on scroll ------------------------------------------------- */
 /* Only hide when JS is active (html.js). Without JS, content stays visible

@@ -17,9 +17,8 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Fonts (single preconnected source; system fallbacks in CSS) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin />
+  <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet" />
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
   <link rel="manifest" href="assets/site.webmanifest" />
@@ -84,6 +83,10 @@
     <section class="hero">
       <canvas id="hero-canvas" aria-hidden="true"></canvas>
       <div class="hero__fallback" aria-hidden="true"></div>
+      <span class="spark" style="width:56px;height:56px;top:16%;left:5%;" aria-hidden="true"></span>
+      <span class="spark" style="width:26px;height:26px;top:68%;left:11%;animation-delay:-3s;" aria-hidden="true"></span>
+      <span class="spark" style="width:40px;height:40px;top:24%;right:7%;animation-delay:-6s;" aria-hidden="true"></span>
+      <span class="spark" style="width:18px;height:18px;bottom:16%;right:20%;animation-delay:-1.5s;" aria-hidden="true"></span>
       <div class="container hero__inner">
         <div class="hero__panel glass">
           <span class="lang-badge">
@@ -131,8 +134,10 @@
 
     <!-- ===== This might be you ===== -->
     <section class="section">
+      <div class="blob blob--c" style="width:300px;height:300px;top:40px;right:-110px;" aria-hidden="true"></div>
       <div class="container">
         <div class="section-head center reveal">
+          <span class="flourish" aria-hidden="true"><i></i><i></i><i></i></span>
           <p class="eyebrow">You&rsquo;re in the right place if&hellip;</p>
           <h2>Some of this might feel familiar</h2>
           <p class="lead">There&rsquo;s no &ldquo;right&rdquo; reason to start therapy. If any of this lands, it&rsquo;s worth a conversation.</p>
@@ -213,30 +218,64 @@
 
     <!-- ===== Approach ===== -->
     <section class="section">
-      <div class="container split">
-        <div class="reveal">
-          <p class="eyebrow">My approach</p>
-          <h2>Gentle, collaborative, and always on your side</h2>
-          <p>I won&rsquo;t hand you a one-size-fits-all program. We&rsquo;ll go at a pace that feels safe, and you&rsquo;ll always stay in the driver&rsquo;s seat. My work is trauma-informed and feminist at its core — which simply means I take your context, your story and your safety seriously.</p>
-          <p>Rather than labels and jargon, we focus on what actually helps you feel steadier, more grounded, and more like yourself again.</p>
-          <div class="tag-list">
-            <span>Trauma-focused</span>
-            <span>ACT</span>
-            <span>Narrative</span>
-            <span>Solution-focused</span>
-            <span>Client-centred</span>
-            <span>Feminist</span>
-            <span>Strength-based</span>
+      <div class="blob blob--a" style="width:340px;height:340px;top:-60px;left:-120px;" aria-hidden="true"></div>
+      <div class="container">
+        <div class="split">
+          <div class="reveal">
+            <p class="eyebrow">My approach</p>
+            <h2>Gentle, collaborative, and always on your side</h2>
+            <p>I won&rsquo;t hand you a one-size-fits-all program. We&rsquo;ll go at a pace that feels safe, and you&rsquo;ll always stay in the driver&rsquo;s seat. My work is trauma-informed and feminist at its core — which simply means I take your context, your story and your safety seriously.</p>
+            <p>Rather than labels and jargon, we focus on what actually helps you feel steadier, more grounded, and more like yourself again.</p>
+            <div class="tag-list">
+              <span>Trauma-focused</span>
+              <span>ACT</span>
+              <span>Narrative</span>
+              <span>Solution-focused</span>
+              <span>Client-centred</span>
+              <span>Feminist</span>
+              <span>Strength-based</span>
+            </div>
+          </div>
+          <div class="puzzle-card glass reveal">
+            <svg class="puzzle-illus" viewBox="0 -16 220 216" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Puzzle pieces coming together, with the final piece being placed">
+              <defs>
+                <filter id="ps" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#6d4ad8" flood-opacity="0.3"/></filter>
+              </defs>
+              <!-- three assembled pieces -->
+              <path d="M0,0 L100,0 L100,35 a15 15 0 0 1 0 30 L100,100 L65,100 a15 15 0 0 1 -30 0 L0,100 Z" fill="#e7defb" stroke="#b59ff0" stroke-width="2.5"/>
+              <path d="M0,100 L35,100 a15 15 0 0 0 30 0 L100,100 L100,135 a15 15 0 0 1 0 30 L100,200 L0,200 Z" fill="#d9c8fb" stroke="#b59ff0" stroke-width="2.5"/>
+              <path d="M100,100 L135,100 a15 15 0 0 0 30 0 L200,100 L200,200 L100,200 L100,165 a15 15 0 0 0 0 -30 L100,100 Z" fill="#cdb8f6" stroke="#b59ff0" stroke-width="2.5"/>
+              <!-- empty slot -->
+              <path d="M100,0 L200,0 L200,100 L165,100 a15 15 0 0 1 -30 0 L100,100 L100,65 a15 15 0 0 0 0 -30 L100,0 Z" fill="none" stroke="#b59ff0" stroke-width="2" stroke-dasharray="5 5" opacity="0.55"/>
+              <!-- the key piece, lifted into place -->
+              <path d="M100,0 L200,0 L200,100 L165,100 a15 15 0 0 1 -30 0 L100,100 L100,65 a15 15 0 0 0 0 -30 L100,0 Z" transform="translate(14,-12) rotate(-6 150 50)" fill="#6d4ad8" stroke="#533ab0" stroke-width="2.5" filter="url(#ps)"/>
+              <circle cx="208" cy="-2" r="4" fill="#b59ff0"/>
+              <circle cx="197" cy="10" r="2.5" fill="#d9c8fb"/>
+            </svg>
+            <p>Therapy is a bit like a puzzle — together we find the pieces that fit <em>you</em>, and slowly the picture comes into focus.</p>
           </div>
         </div>
-        <div class="card glass reveal">
-          <h3>What you can expect</h3>
-          <ul class="offer" style="padding:0;gap:.8rem;margin-top:1rem;">
-            <li><b>A space free of judgement</b> — including for the things you&rsquo;ve never said out loud.</li>
-            <li><b>Affirming care</b> — for all genders, LGBTQ+ folks, every faith and background.</li>
-            <li><b>Practical tools</b> — that you can actually use between sessions.</li>
-            <li><b>Honesty about fit</b> — if I&rsquo;m not the right person, I&rsquo;ll help you find who is.</li>
-          </ul>
+
+        <div class="section-head center reveal" style="margin-top:clamp(2.5rem,6vw,4rem);">
+          <h3 style="font-size:clamp(1.4rem,1.2rem+1vw,1.8rem);">What you can expect</h3>
+        </div>
+        <div class="grid grid-2 reveal">
+          <article class="card glass">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <h3>A space free of judgement</h3><p>Including for the things you&rsquo;ve never said out loud to anyone.</p>
+          </article>
+          <article class="card glass">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-9.5-8.5C.7 9.36 2 5.5 5.5 5.5A4.5 4.5 0 0 1 12 8a4.5 4.5 0 0 1 6.5-2.5C22 5.5 23.3 9.36 21.5 12.5 19 16.65 12 21 12 21z"/></svg></div>
+            <h3>Affirming care</h3><p>For all genders, LGBTQ+ folks, every faith and background.</p>
+          </article>
+          <article class="card glass">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12c.5.5 1 1.5 1 2h6c0-.5.5-1.5 1-2a7 7 0 0 0-4-12z"/></svg></div>
+            <h3>Practical tools</h3><p>Things you can actually use in real life, between our sessions.</p>
+          </article>
+          <article class="card glass">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"/><path d="M12 8v4l3 2"/></svg></div>
+            <h3>Honesty about fit</h3><p>If I&rsquo;m not the right person, I&rsquo;ll help you find who is.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -319,6 +358,7 @@
 
     <!-- ===== Final CTA ===== -->
     <section class="section" id="contact">
+      <div class="blob blob--b" style="width:320px;height:320px;bottom:-120px;left:-100px;" aria-hidden="true"></div>
       <div class="container narrow">
         <div class="cta-band glass reveal">
           <p class="eyebrow">Take the first small step</p>
