@@ -11,7 +11,7 @@
   // SETUP: Cloudflare dashboard -> Analytics & Logs -> Web Analytics ->
   // "Add a site" (enter your URL) -> copy the token, and paste it below.
   // Until a real token is set, this stays off (no requests fired).
-  const CF_ANALYTICS_TOKEN = 'YOUR_CF_TOKEN';
+  const CF_ANALYTICS_TOKEN = '9e1c5fed8f2d4f0689793e3c92cda1e8';
   if (CF_ANALYTICS_TOKEN && CF_ANALYTICS_TOKEN !== 'YOUR_CF_TOKEN') {
     const cf = document.createElement('script');
     cf.defer = true;
