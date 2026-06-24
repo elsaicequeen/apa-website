@@ -174,6 +174,14 @@
     });
   }
 
+  /* ---- WhatsApp links open in a new tab -------------------------------- */
+  // Runs after the per-page inline scripts have set the real wa.me hrefs and
+  // after the sticky CTA is injected above, so it catches every WhatsApp link.
+  document.querySelectorAll('a[href*="wa.me"]').forEach((a) => {
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+  });
+
   /* ---- Footer year ----------------------------------------------------- */
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
