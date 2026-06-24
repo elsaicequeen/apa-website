@@ -4,6 +4,22 @@
    Zero-build. All tokens are CSS custom properties for easy rebranding.
    ========================================================================= */
 
+/* ----- Self-hosted font (Glacial Indifference) — no third-party CDN ------ */
+@font-face {
+  font-family: 'Glacial Indifference';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/GlacialIndifference-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Glacial Indifference';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/GlacialIndifference-Bold.woff') format('woff');
+}
+
 /* ----- Design tokens ---------------------------------------------------- */
 :root {
   /* Lavender / lilac / white palette */
