@@ -7,6 +7,19 @@
   'use strict';
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---- Cloudflare Web Analytics (privacy-first, cookieless) ------------ */
+  // SETUP: Cloudflare dashboard -> Analytics & Logs -> Web Analytics ->
+  // "Add a site" (enter your URL) -> copy the token, and paste it below.
+  // Until a real token is set, this stays off (no requests fired).
+  const CF_ANALYTICS_TOKEN = 'YOUR_CF_TOKEN';
+  if (CF_ANALYTICS_TOKEN && CF_ANALYTICS_TOKEN !== 'YOUR_CF_TOKEN') {
+    const cf = document.createElement('script');
+    cf.defer = true;
+    cf.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    cf.setAttribute('data-cf-beacon', JSON.stringify({ token: CF_ANALYTICS_TOKEN }));
+    document.head.appendChild(cf);
+  }
+
   /* ---- Header glass-on-scroll ----------------------------------------- */
   const header = document.querySelector('.site-header');
   if (header) {
