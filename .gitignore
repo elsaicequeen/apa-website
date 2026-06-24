@@ -17,3 +17,5 @@ npm-debug.log*
 
 # vercel skills CLI install (not part of the site)
 .agents/
+skills-lock.json
+.claude/skills/find-skills
