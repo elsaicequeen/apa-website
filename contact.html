@@ -31,7 +31,7 @@
         <a class="navlink" href="services.html">How I help</a>
         <a class="navlink" href="index.html#fees">Fees</a>
         <a class="navlink" href="contact.html">Contact</a>
-        <a class="btn" href="contact.html">Book free intake</a>
+        <a class="btn" href="contact.html#book">Book free intake</a>
       </nav>
     </div>
   </header>
@@ -48,15 +48,25 @@
 
     <section class="section" style="padding-top:0;">
       <div class="container contact-grid">
-        <!-- Quick contact methods -->
+        <!-- Booking column: calendar first (primary), other ways below -->
         <div class="reveal">
+          <h3 id="book" style="margin:0 0 .7rem;font-size:1.15rem;color:var(--plum);scroll-margin-top:90px;">Pick a time that suits you</h3>
+          <!-- Calendly inline embed — main.js lazy-loads the widget into this div on scroll. -->
+          <div class="calendly-wrap glass" data-calendly="https://calendly.com/apabrita907">
+            <div style="padding:2rem;text-align:center;color:var(--muted);">
+              <p><b style="color:var(--plum);">Loading the calendar&hellip;</b></p>
+              <p class="form-note" style="margin-top:.4rem;">If it doesn&rsquo;t appear, message on WhatsApp or fill the intake form below, and we&rsquo;ll find a time together &mdash; including across time zones.</p>
+            </div>
+          </div>
+
+          <h3 style="margin:1.8rem 0 .7rem;font-size:1.08rem;color:var(--plum);">Prefer another way?</h3>
           <div class="contact-methods">
             <div class="method glass">
               <div class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.05 24l1.7-6.2A11.9 11.9 0 1 1 12 24a11.9 11.9 0 0 1-5.9-1.6L.05 24zM6.6 20.1l.4.2a9.9 9.9 0 1 0-3.4-3.4l.2.4-1 3.6 3.8-.8z"/></svg></div>
               <div>
                 <h3>WhatsApp (fastest)</h3>
                 <p>Send a quick message. It&rsquo;s usually the easiest way to get started.</p>
-                <a class="btn btn--whatsapp" id="page-wa" href="#intake" rel="noopener" style="margin-top:.2rem;">Message on WhatsApp</a>
+                <a class="btn btn--whatsapp" id="page-wa" href="https://wa.me/917002318224" rel="noopener" style="margin-top:.2rem;">Message on WhatsApp</a>
               </div>
             </div>
             <div class="method glass">
@@ -74,15 +84,6 @@
                 <p>Share a little about yourself using the intake form, and I&rsquo;ll be in touch to find a time that works for you.</p>
                 <a class="inline" href="#intake">Go to the intake form &darr;</a>
               </div>
-            </div>
-          </div>
-
-          <h3 style="margin:1.4rem 0 .6rem;font-size:1.08rem;color:var(--plum);">Or pick a time directly</h3>
-          <!-- Calendly inline embed — main.js lazy-loads the widget into this div on scroll. -->
-          <div class="calendly-wrap glass" data-calendly="https://calendly.com/apabrita907" style="margin-top:.2rem;">
-            <div style="padding:2rem;text-align:center;color:var(--muted);">
-              <p><b style="color:var(--plum);">Loading the calendar&hellip;</b></p>
-              <p class="form-note" style="margin-top:.4rem;">If it doesn&rsquo;t appear, message on WhatsApp or fill the intake form, and we&rsquo;ll find a time together &mdash; including across time zones.</p>
             </div>
           </div>
         </div>
@@ -114,7 +115,7 @@
         <div class="crisis"><b>In crisis or unsafe right now?</b> Therapy isn&rsquo;t emergency care. In India call <b>Tele-MANAS 14416</b> (24×7) or <b>iCall 9152987821</b>. If life is in danger, call <b>112</b>.</div>
       </div>
       <div><h4>Explore</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Apabrita</a></li><li><a href="services.html">How I help</a></li><li><a href="index.html#fees">Fees</a></li><li><a href="contact.html">Contact &amp; booking</a></li><li><a href="privacy.html">Privacy &amp; terms</a></li></ul></div>
-      <div><h4>Get in touch</h4><ul><li><a href="contact.html">Book a free intake call</a></li><li><a id="footer-wa" href="contact.html">WhatsApp</a></li><li><a id="footer-email" href="mailto:apabrita907@gmail.com">Email</a></li></ul><h4 style="margin-top:1.4rem;">Sessions in</h4><ul><li>English · हिन्दी · বাংলা · অসমীয়া</li></ul></div>
+      <div><h4>Get in touch</h4><ul><li><a href="contact.html#book">Book a free intake call</a></li><li><a id="footer-wa" href="contact.html">WhatsApp</a></li><li><a id="footer-email" href="mailto:apabrita907@gmail.com">Email</a></li></ul><h4 style="margin-top:1.4rem;">Sessions in</h4><ul><li>English · हिन्दी · বাংলা · অসমীয়া</li></ul></div>
     </div>
     <div class="container footer-bottom"><span>© <span id="year">2026</span> The Breathing Room · Therapy with Apabrita.</span><span>Online therapy across India · Made with care.</span></div>
   </footer>
