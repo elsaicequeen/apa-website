@@ -256,9 +256,10 @@ p { color: var(--ink); }
 }
 .portrait-ph span { display:block; font-family: var(--sans); font-size: 0.78rem; color: var(--muted); margin-top: 0.5rem; }
 .portrait-badge {
-  position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%);
-  white-space: nowrap; padding: 0.5rem 1.1rem; font-size: 0.82rem; font-weight: 600; color: var(--violet-deep);
-  border-radius: 999px;
+  position: absolute; bottom: -18px; left: 50%; transform: translateX(-50%);
+  white-space: normal; max-width: min(94%, 320px); text-align: center; line-height: 1.4;
+  padding: 0.5rem 1.1rem; font-size: 0.8rem; font-weight: 600; color: var(--violet-deep);
+  border-radius: 16px;
 }
 
 @media (max-width: 860px) {
