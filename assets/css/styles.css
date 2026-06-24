@@ -78,7 +78,7 @@ h1, h2, h3, h4 {
   letter-spacing: -0.02em;
 }
 
-h1 { font-size: clamp(2.3rem, 1.5rem + 3.5vw, 4rem); }
+h1 { font-size: clamp(2rem, 1.2rem + 3.2vw, 4rem); }
 h2 { font-size: clamp(1.8rem, 1.3rem + 2vw, 2.7rem); }
 h3 { font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.45rem); }
 
@@ -188,7 +188,7 @@ p { color: var(--ink); }
   border: 1px solid var(--lilac-soft); background: var(--glass-fill); cursor: pointer;
   align-items: center; justify-content: center; flex-direction: column; gap: 5px;
 }
-.menu-btn span { display: block; width: 20px; height: 2px; background: var(--plum); border-radius: 2px; transition: 0.25s; }
+.menu-btn span { display: block; width: 20px; height: 2px; background: var(--plum); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
 
 @media (max-width: 860px) {
   .menu-btn { display: inline-flex; }
@@ -265,6 +265,7 @@ p { color: var(--ink); }
   .hero { min-height: auto; padding-block: 3rem 4rem; }
   .hero__inner { grid-template-columns: 1fr; }
   .hero__portrait { order: -1; max-width: 320px; margin-inline: auto; }
+  .portrait-badge { white-space: normal; width: max-content; max-width: 92%; text-align: center; }
 }
 
 /* ----- Trust strip ------------------------------------------------------ */
@@ -452,3 +453,12 @@ p { color: var(--ink); }
   .js .reveal { opacity: 1; transform: none; }
   #hero-canvas { display: none; }
 }
+
+/* ----- Polish pass (Web Interface Guidelines) --------------------------- */
+/* Headings: balanced line-wrapping; never overflow the viewport on mobile. */
+h1, h2, h3, h4 { overflow-wrap: break-word; text-wrap: balance; }
+.hero__inner > * { min-width: 0; }
+/* In-page anchors (#fees, #services, #contact) clear the sticky header. */
+:target, section[id] { scroll-margin-top: 84px; }
+/* Snappier taps on touch devices (removes the 300ms double-tap delay). */
+a, button, .btn, summary, label { touch-action: manipulation; -webkit-tap-highlight-color: rgba(109, 74, 216, 0.12); }

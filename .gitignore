@@ -14,3 +14,6 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
+
+# vercel skills CLI install (not part of the site)
+.agents/
